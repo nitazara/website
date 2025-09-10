@@ -1,0 +1,87 @@
+header {
+    background-color: rgb(195, 177, 225);
+    top: 0;
+    position: sticky;
+}
+.himg {
+    width: 100;
+    height: 100;
+    
+}
+.rest{
+    background-color: rgb(4, 0, 89);
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    z-index: 2;
+    position:sticky;
+    margin: 0 auto;
+    top: 0;
+    display: none;
+}
+.rest p{
+    font-size: 30px;
+    color : white;
+}
+.rest h2{
+    font-size: 60px;
+    color : white;
+}
+.rest img{
+    width: 300px;
+    height: 300px;
+}
+main{
+    padding: 20px;
+    background-color: rgb(204, 204, 255);
+}
+.isi {
+   font-style: italic;
+   font-size: 18px;
+   float: right;
+   padding-right: 10%;
+   padding-top: 20px;
+   text-align: center;
+  
+}
+footer{
+    background-color: rgb(207, 159, 255);
+}
+header a{
+    color: mistyrose;
+}
+header a:hover{
+    color: thistle;
+}
+
+.cente{
+    text-align: center;
+    margin-top: 130px;
+}
+main nav img{
+    width: 260px;
+    height: 200px;
+    padding-left: 5%;
+}
+main nav a{
+    padding-left: 5%;
+}
+.Website_ku_yang_lama{margin-right: 50%;}
+.fakta_unik{
+    padding-left: 50%;
+
+}
+
+h1{
+    font-family: "Merriweather", serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    text-align: center;
+}
+.spoiler1{
+    width: 200px;
+    height: 220px;
+    padding-left: 200px;
+
+}

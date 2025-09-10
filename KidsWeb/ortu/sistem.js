@@ -16,12 +16,12 @@ document.getElementById('sembunyi').addEventListener('click', function() {
 //let seconds = Math.floor((diff % minute_to_miliseconds) / second_to_miliseconds);
 
 
-setTimeout( "resting()", 60000 * 60)
+setTimeout( "resting()", 60000)
 
 function resting(){
   document.body.classList.add('no-scroll');
   document.getElementById('rest').style.display = 'block';
-  setTimeout( "notrest()", 60000 * 30)
+  setTimeout( "notrest()", 10000)
 }
 function notrest(){
   document.getElementById('rest').style.display = 'none';

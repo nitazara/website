@@ -116,21 +116,24 @@ h2{
 
 
 .gambarweb{
-    width: 200px;
-    height: 200px;
+    
     float: left; /* Membuat gambar berderetan */
     padding: 10px; /* Tambahkan padding jika diperlukan */
-    padding-top: 20px;
+    padding-bottom: 50px;
+}
+.gambarwebg{
+    width: 150px;
+    height: 150px;
 }
 .gambarweb1{
-    width: 200px;
-    height: 200px;
+    /* width: 200px;
+    height: 200px; */
     display: flex;  /* Aktifkan flexbox */
     flex-wrap: wrap; /* Mengizinkan gambar melompat ke baris baru jika diperlukan */
     justify-content: space-around; /* Jarak antara gambar */
     align-items: center; /*Memusatkan gambar secara vertikal */
     padding: 10px;
-    padding-bottom: 10px;
+    padding-top: 10px;
 }
 .gambarweb2{
     padding: 20px;
