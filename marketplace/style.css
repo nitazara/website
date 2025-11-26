@@ -1,0 +1,426 @@
+:root {
+  --primary: rgb(0, 183, 0);
+  --bg: rgba(122, 213, 255, 0.824);
+}
+
+* {
+  text-decoration: none;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg);
+  color: #000;
+}
+
+/* header */
+header {
+  width: 100%;
+  /* height: 100%; */
+  background-color: rgba(62, 214, 100, 0.282);
+  display: inline-block;
+
+}
+
+.himg {
+  width: 80px;
+  height: 80px;
+  margin-left: 20px;
+  margin-top: 10px;
+  float: left;
+}
+
+.navbar {
+  display: flex;
+  float: right;
+  align-items: center;
+  top: 0;
+  left: 0;
+  right: 0;
+  justify-content: space-between;
+  padding: 1.4rem;
+  /* position: fixed; */
+  z-index: 100;
+  font-size: 1.3rem;
+  padding: 10px 30px;
+}
+
+.isi {
+  margin-left: 30px 26px;
+}
+
+#TambahProduk,
+#editProduk {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: rgba(92, 77, 255, 0);
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+#keranjang {
+  position: relative;
+
+}
+
+.notiveJumlah {
+  display: inline-block;
+  padding: 1px 5px;
+  /* height: 10px;
+  width: 10px; */
+  color: white;
+  top: 0%;
+  right: -7px;
+  position: absolute;
+  border-radius: 50%;
+  background-color: red;
+}
+
+#else {
+  display: none;
+
+}
+
+.profile {
+  width: 15%;
+  height: 15%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* main s*/
+.TambahEdit {
+  display: none;
+  position: sticky;
+  padding-left: 20%;
+  padding-right: 10%;
+  width: 90%;
+  height: max-content;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+
+  z-index: 1000;
+}
+
+.TambahEdit .cente,
+.more {
+  float: inline-start;
+  margin: -10px;
+  /* padding: 0 5px 0 0; */
+  /* padding-right: 300px; */
+}
+
+.TambahEdit input {
+  background-color: rgba(205, 220, 249, 0.637);
+  border-radius: 5px;
+  text-align: center;
+}
+
+
+
+#tutupKeranjang {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: rgba(255, 92, 92, 0.762);
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+  position: absolute;
+  bottom: 0;
+  align-items: center;
+}
+
+main {
+  padding: 20px;
+}
+
+.kanan {
+  float: right;
+  padding-left: 15%;
+  width: 40%;
+}
+
+.itemKeranjang {
+  border: 1px solid rgb(198, 158, 158);
+  padding: 10px 0;
+  background-color: rgb(255, 254, 198);
+}
+
+.itemKeranjang img {
+  width: 20%;
+  height: 7%;
+  border-radius: 20px;
+  /* margin-right: 10px; */
+  float: left;
+  background-color: white;
+}
+
+.isiKeranjang {
+  display: none;
+  position: sticky;
+  position: relative;
+  padding-left: 20%;
+  padding-right: 10%;
+  width: 90%;
+  height: 100%;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+
+  z-index: 1000;
+}
+
+.beli {
+  background-color: rgb(0, 183, 0);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  position: absolute;
+  bottom: 0;
+  align-items: center;
+}
+
+.beli.disabled {
+  background-color: gray;
+  cursor: not-allowed;
+}
+
+#formisi {
+  display: none;
+  display: flex;
+  /* flex-direction: column; */
+  gap: 15px;
+  background-color: antiquewhite;
+  /* padding: 0 20px; */
+  width: 70%;
+  z-index: 2000;
+  align-items: center;
+  justify-content: center;
+}
+
+#formisi hr {
+  height: 5px;
+  background-color: rgba(255, 247, 103, 0.689);
+}
+
+#formisi input,
+textarea {
+  width: 95%;
+}
+
+.kirim span {
+  font-size: 16px;
+  font-weight: bold;
+  color: rgba(62, 214, 100, 0.282);
+}
+
+/* #formisi .more,
+form.cente {
+  gap: 20px;
+  background-color: aqua;
+} */
+
+/* shop */
+#produk {
+  padding: 40px;
+  gap: 15px;
+}
+
+.gambarweb {
+  z-index: 1;
+  float: left;
+  /* Membuat gambar berderetan */
+
+  /* Tambahkan padding jika diperlukan */
+  padding-bottom: 70px;
+  border-radius: 40px;
+  text-align: center;
+  width: fit-content;
+  height: fit-content;
+  background-color: rgb(205, 238, 255);
+  gap: 15px;
+}
+
+.gambarwebg {
+  border-radius: 40px;
+  width: 150px;
+  height: 150px;
+  align-items: center;
+}
+
+.shop .gambarwebg {
+  background-color: whitesmoke;
+  border-radius: 30px 30px 0 0;
+}
+
+.gambarweb1 {
+  text-align: center;
+  /* width: 200px;
+    height: 200px; */
+  display: flex;
+  /* Aktifkan flexbox */
+  flex-wrap: wrap;
+  /* Mengizinkan gambar melompat ke baris baru jika diperlukan */
+  justify-content: space-around;
+  /* Jarak antara gambar */
+  align-items: center;
+  /*Memusatkan gambar secara vertikal */
+  padding: 10px;
+  padding-top: 10px;
+  list-style: none;
+  /* float: left; */
+}
+
+.gambarweb2 {
+  padding: 40px;
+}
+
+.pemisah hr {
+  /* height: 30px; */
+  width: 100%;
+  height: 90px;
+  color: rgb(243, 0, 0);
+}
+
+.judul {
+  font-size: 20px;
+  font-weight: bold;
+  color: rgb(92, 77, 255);
+}
+
+.harga {
+  font-size: 15px;
+  font-weight: bold;
+  color: rgb(0, 183, 0);
+}
+
+.deskripsi {
+  font-size: 14px;
+  color: rgb(102, 102, 102);
+}
+
+.padding span {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.tombolproduk :active {
+  color: white;
+
+}
+
+.tombolproduk :hover {
+  color: rgb(181, 32, 32);
+  cursor: pointer;
+}
+
+.tombolproduk {
+  background-color: rgba(8, 9, 12, 0);
+}
+
+.padding img {
+  background-color: rgb(251, 251, 251);
+  border-radius: 0;
+}
+
+
+
+.Selengkapnya {
+  background-color: rgba(0, 255, 229, 0.762);
+  color: rgb(181, 32, 32);
+  cursor: pointer;
+  min-width: 120px;
+  min-height: 50px;
+  border-radius: 30%;
+}
+
+.detail {
+  display: none;
+  position: sticky;
+  padding-left: 20%;
+  padding-right: 10%;
+  width: 90%;
+  height: 80%;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+
+  z-index: 1000;
+}
+
+/* main f*/
+/* footer */
+footer {
+  background-color: rgb(153, 255, 202);
+  height: 420px;
+  max-height: 25%;
+  display: grid;
+  z-index: 0;
+  width: 100%;
+  display: flex;
+}
+
+.more {
+  float: left;
+  margin-left: 10%;
+  width: 20%;
+  border-radius: 20px;
+  text-align: center;
+  height: 55%;
+}
+
+.cente {
+
+  float: right;
+  margin-right: 10%;
+  width: 20%;
+  border-radius: 20px;
+  text-align: center;
+  height: 40%;
+  padding: 10px;
+}
+
+/* v v v v v   media   v v v v v v v v v v v v  */
+
+/* laptop */
+@media(max-width: 1366px) {
+  html {
+    font-size: 75%;
+  }
+}
+
+/* tablet */
+@media(max-width: 768px) {
+  html {
+    font-size: 65%;
+  }
+
+  #else {
+    display: inline-block;
+  }
+
+  /* .navbar .isi {
+    position: absolute;
+    padding: 10px
+  } */
+
+  /* 
+  .navbar .isi.active {
+    right: 0;
+  } */
+}
+
+/* <-- Add this closing brace for the 768px media query */
+
+/* hp */
+@media(max-width: 450px) {
+  html {
+    font-size: 59%;
+  }
+}

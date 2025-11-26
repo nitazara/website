@@ -1,0 +1,243 @@
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>market/home</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap"
+        rel="stylesheet">
+    <meta name="google-site-verification" content="Y-VVeHSkqj9c1LL_fbXdMetvl7Ur9QVpPH-qxBETjm0" />
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    <script src="//unpkg.com/alpinejs" defer></script>
+
+</head>
+<!-- <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-analytics.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+    import {
+        getFirestore,
+        collection,
+        addDoc,
+        getDocs
+    } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
+
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+        apiKey: "AIzaSyCKynqkMJZsHDz_osjbJiuZGVq_UTYNCv0",
+        authDomain: "marketplace-a1d2e.firebaseapp.com",
+        projectId: "marketplace-a1d2e",
+        storageBucket: "marketplace-a1d2e.firebasestorage.app",
+        messagingSenderId: "18035659112",
+        appId: "1:18035659112:web:2f3beac521e7d48f5cc6dd",
+        measurementId: "G-6S19EBLSVN"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+</script>
+<script type="module">
+    import {
+        getFirestore, collection, addDoc, getDocs
+    } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
+
+    const db = getFirestore();
+</script> -->
+
+<body>
+
+    <header>
+        <img src="" class="himg">
+        <!-- a href="profile.html" class="float:left;"><img src="asset/profileDefault.png" class="profile"></a> -->
+        <form action="shop.html" method="get">
+            <input type="text" name="cari" placeholder="Cari produk..." class="inputcari">
+            <button type="submit" class="tombolcari">Cari</button>
+        </form>
+        <nav class="navbar" x-data>
+
+            <button onclick="tambahProduk()" id="tambahProduk">
+                <a href="#" class="isi">Tambahproduk</a>
+            </button>
+
+            <button id="editProduk">
+                <a href="#" class="isi">Edit produk</a>
+            </button>
+            <!-- <a href="#"> -- </a> -->
+            <a id="keranjang" href="#" class="isi" @click.prevent="$store.cart.toggleOpen()">
+                <svg width=" 24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <use href="asset/feather-sprite.svg#shopping-cart" />
+                </svg>
+                <span class="notiveJumlah" x-show="$store.cart && $store.cart.jumlah"
+                    x-text="$store.cart ? $store.cart.jumlah : ''"></span>
+            </a>
+
+
+        </nav>
+
+    </header>
+
+    <div x-data="$store.cart.items" class="Kirim" x-show="$store.cart && $store.cart.jumlah > 0">
+        <input type="hidden" name="items" x-model="JSON.stringify($store.cart.items)">
+        <input type="hidden" name="total" x-model="$store.cart.totalHarga">
+        <h4> Beli <span x-text="items.name"></span> dari <span x-text="items.nomor_telfon"></span> </h4>
+        <form id="datapembeli" style="margin-top: 10px; padding-top: 10px; border: 1px solid #ccc;">
+            <input type="hidden" name="items" x-model="JSON.sringify($store.cart.items)">
+            <input type="hidden" name="total" x-model="$store.cart.totalHarga">
+
+            <h3>Isi data pembeli</h3>
+            <p>Name:</p> <input type="text" name="name" required>
+
+            <p>Address:</p> <input type="text" name="address" required>
+
+            <p>Phone Number:</p> <input type="text" name="phone" required>
+            <button onclick="console.log(items)" class="beli disabled">Beli</button>
+        </form>
+    </div>
+    <main x-data="produk">
+        <h1>Selamat berbelanja</h1>
+        <form id="formisi">
+            <div class="more">
+                <h3>isi data</h3>
+                <p>Phone Number</p>
+                <input type="text" placeholder="Nomor Telfon">
+                <p>Ussername</p>
+                <input type="text" placeholder="Nama Penjual/Ussername">
+                <p>Password for access</p>
+                <input type="text" placeholder="Password untuk akses edit produk">
+            </div>
+            <div>
+                <hr>
+            </div>
+            <div class="cente">
+                <h3>Tambah Produk</h3>
+                <p>Product Name</p>
+                <input type="text" placeholder="nama_Produk" id="namaProduk">
+                <hr>
+                <p>Price</p>
+                <input type="text" placeholder="harga" id="harga">
+                <hr>
+                <p>Product Description</p>
+                <textarea id="deskripsi" placeholder="deskripsi"></textarea>
+                <!-- <input type="text"  id=""> -->
+                <hr>
+                <p>stock</p>
+                <input type="number" placeholder="stok" id="stok">
+                <hr>
+                <p>Product image</p>
+                <input type="file" id="gambar" accept="image/*">
+                <hr>
+                <button type="submit" id="submit" class="tombolproduk">Tambah Produk</button>
+            </div>
+        </form>
+        <!-- Detail produk — pakai selectedItem, bukan item di luar loop -->
+        <!-- <div class="detail" x-show="selectedItem" style="display: none;" x-cloak>
+                    <h2>Detail Produk</h2>
+                    <img :src="`asset/${item.asset}`" class="gambarwebg" :alt="selectedItem.name">
+                    <p x-text="item.name"></p>
+                    <span x-text="item.deskripsi"></span>
+                    <p>stok : <span x-text="item.stok"></span></p>
+                    <button class="tutupDeskripsi" @click="DetailClose()">Tutup</button>
+                </div> -->
+
+        <!-- aside / keranjang -->
+        <aside class="kanan">
+            <div class="keranjang" x-show="$store.cart.isOpen" x-cloak>
+                <div id="isiKeranjang">
+                    <h3>Keranjang Belanja</h3>
+
+
+                    <template x-for="item in $store.cart.items" :key="item.id">
+                        <div class="itemKeranjang">
+
+                            <!-- gambar -->
+                            <img :src="`${item.asset}`" class="gambarKeranjang">
+
+                            <div class="infoKeranjang">
+                                <!-- nama -->
+                                <p x-text="item.name"></p>
+
+                                <!-- harga -->
+                                <p x-text="rupiah(item.price)"></p>
+
+                                <!-- tombol + dan - -->
+                                <div class="qty">
+                                    <button @click="$store.cart.remove(item.id)">−</button>
+                                    <span x-text="item.quantity"></span>
+                                    <button @click="$store.cart.add(item)">+</button>
+                                </div>
+                            </div>
+                        </div>
+                    </template>
+                    <div x-show="$store.cart && $store.cart.jumlah > 0"
+                        style="margin-top: 10px; padding-top: 10px; border-top: 1px solid #ccc;">
+                        <strong>TOTAL: </strong>
+                        <span x-text="rupiah($store.cart ? $store.cart.totalHarga : 0)"></span>
+                    </div>
+
+                </div>
+        </aside>
+
+        <!-- shop -->
+        <section id="produk" class="shop" style="display: block;">
+            <template x-for="item in $store.produk.items" :key="item.id">
+                <div class="gambarweb" style="display: block;">
+                    <!-- path gambar diperbaiki: asset/${item.asset} -->
+                    <img :src="`${item.asset}`" :alt="item.name" class="gambarwebg">
+                    <p class="judul" x-text="item.name"></p>
+                    <p class="harga"><span x-text="rupiah(item.price)"></span></p>
+                    <p class="deskripsi" x-show="item.deskripsi" x-text="item.deskripsi"></p>
+                    <p>stok : <span x-text="item.stok"></span></p>
+                    <!-- tampilkan detail dengan menyet selectedItem
+                                <button class="Selengkapnya" @click="DetailOpen()">Selengkapnya</button> -->
+
+                    <!-- tambah ke keranjang (memanggil store) -->
+                    <button class="tombolproduk" @click="$store.cart.add(item)">
+                        <svg width="24" height="24" fill="pink" stroke="purple" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <use href="asset/feather-sprite.svg#shopping-cart" />
+                        </svg>
+                    </button>
+
+                </div>
+                <a href="shop.html">--</a>
+                <div class="pemisah">
+                    <hr>
+                    <br>
+                    <hr>
+                    <br>
+                    <hr>
+                    <br>
+                    <hr>
+                </div>
+            </template>
+        </section>
+
+        <script type="module" src="sistem.js"></script>
+    </main>
+
+
+    <footer>
+        <div class="more">
+            <p>© NitaZara team</p>
+            <h3>Contact Me</h3>
+            <p> Gmail : codingwithtasha@gmail.com</p>
+        </div>
+        <div class="cente">
+            <h3>Folow Me</h3>
+            <p> Youtube : coding with tasha</p>
+            <p>github : https://github.com/tashanita</p>
+        </div>
+    </footer>
+
+    <script>
+        feather.replace();
+    </script>
+
+</body>
