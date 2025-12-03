@@ -1,0 +1,174 @@
+body {
+    text-align: center;
+    background-color: slateblue;
+    align-items: center;
+}
+
+/* Header */
+header {
+    background-color: rgb(255, 126, 231);
+    padding: 20px;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+}
+
+.logo {
+    float: left;
+    border-radius: 50%;
+    height: 50px;
+
+}
+
+header nav {
+    float: right;
+    margin-right: 5%;
+}
+
+header nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+
+/* Main S */
+main {
+    margin-top: 10%;
+    color: white;
+}
+
+/* about me */
+#about_us {
+    background-color: rgb(255, 156, 211);
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+    font-family: 'Arial', sans-serif;
+    text-align: left;
+}
+
+/* Produk */
+main {
+    bottom: 10%;
+}
+
+#products {
+    height: 30%;
+    border: 10px solid rgb(255, 156, 156);
+}
+
+.item {
+    background-color: rgb(255, 156, 211);
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    /* padding: 15px;*/
+    margin: 10px;
+    text-align: center;
+    float: left;
+    display: flex;
+    height: 300px;
+    width: 30%;
+    top: -2%;
+    bottom: 4%;
+}
+
+.fotoProduk {
+    width: 20%;
+    border-radius: 5px;
+    background-color: none;
+
+}
+
+.item2 {
+    background-color: rgb(255, 156, 211);
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    /* padding: 15px;*/
+    margin: 10px;
+    text-align: center;
+    display: flex;
+    width: 30%;
+    height: 30%;
+}
+
+/* testimony */
+#testimoni a {
+    text-decoration: wavy;
+}
+
+.kataPelanggan {
+    background-color: rgb(255, 156, 211);
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    /* padding: 15px;*/
+    margin: 10px;
+    float: left;
+    display: flex;
+    height: 150px;
+    width: 30%;
+    /* align-items: center;*/
+    justify-content: right;
+    flex-direction: column;
+    text-align: left;
+    align-items: center;
+    row-gap: 0;
+}
+
+.profil_testimony {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    float: left;
+    margin-right: 10px;
+}
+
+.bintang-container {
+    display: flex;
+    /* Menggunakan Flexbox untuk tata letak */
+    gap: 10px;
+    /* Memberi jarak antar ikon */
+    /* align-items: center; */
+    /* Meratakan ikon secara vertikal (jika ukurannya berbeda) */
+}
+
+.bintang-container svg {
+    width: 24px;
+    /* Mengatur lebar ikon */
+    height: 24px;
+    /* Mengatur tinggi ikon */
+    color: rgb(247, 85, 40);
+    /* Mengatur warna ikon */
+}
+
+.review {
+    color: rgb(65, 0, 79);
+    font-size: larger;
+    font-weight: 500;
+    font-style: bold;
+    /* Membuat teks review menjadi tebal */
+    top: -2%;
+    bottom: 2%;
+    margin: 0;
+    padding: 0;
+    /* sesuaikan jarak */
+}
+
+
+/* main E */
+/* Footer S */
+footer {
+    background-color: rgba(255, 126, 231, 0.616);
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    top: 90%;
+    width: 100%;
+    font-family: 'Arial', sans-serif;
+}
